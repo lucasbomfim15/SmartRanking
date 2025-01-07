@@ -1,4 +1,4 @@
-import { Document } from 'mongoose';
+import mongoose, { Document } from 'mongoose';
 import { DesafioStatus } from 'src/categorias/interfaces/desafio-status.enum';
 import Jogador from 'src/jogadores/interfaces/jogador.interface';
 
@@ -10,7 +10,7 @@ export default interface Desafio extends Document {
   solicitante: Jogador;
   categoria: string;
   jogadores: Array<Jogador>;
-  partida: Partida;
+  partida: mongoose.Schema.Types.ObjectId;
 }
 
 export interface Partida extends Document {
